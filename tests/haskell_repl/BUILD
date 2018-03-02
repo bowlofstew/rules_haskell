@@ -14,6 +14,8 @@ haskell_library(
 
 haskell_repl(
   name = "haskell_repl",
+  srcs = glob(["src/*.hs", "src/*.hsc"]),
+  src_strip_prefix = "src",
   deps = [":hs-lib"],
   prebuilt_dependencies = ["base", "array"],
   visibility = ["//visibility:public"],
